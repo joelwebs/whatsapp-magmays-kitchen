@@ -1,3 +1,4 @@
+
 name: Backend CI
 
 on:
@@ -16,6 +17,11 @@ jobs:
     defaults:
       run:
         working-directory: backend/apps
+
+    env:
+      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      DEBUG: "False"
+      DATABASE_URL: "sqlite:///ci.sqlite3"
 
     steps:
       - name: Checkout repository
