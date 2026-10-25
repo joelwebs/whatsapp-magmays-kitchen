@@ -18,8 +18,9 @@ jobs:
       run:
         working-directory: backend/apps
 
-    env:
-      SECRET_KEY: ${{ secrets.SECRET_KEY }}
+      
+      env:
+      SECRET_KEY: "ci-only-insecure-test-key-do-not-use-in-production"
       DEBUG: "False"
       DATABASE_URL: "sqlite:///ci.sqlite3"
 
