@@ -1,0 +1,301 @@
+
+.owner-page {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px;
+  color: #25291f;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.owner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.owner-eyebrow {
+  margin: 0 0 8px;
+  color: #78816e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.owner-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: -0.04em;
+}
+
+.owner-muted,
+.owner-section-heading p,
+.owner-stat-card small {
+  color: #777d72;
+}
+
+.owner-muted {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+.owner-business-chip {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 15px;
+  border: 1px solid #e8e9e1;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.owner-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #518b4d;
+}
+
+.owner-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.owner-stat-card,
+.owner-panel {
+  border: 1px solid #e9e9e1;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgb(35 45 24 / 3%);
+}
+
+.owner-stat-card {
+  padding: 22px;
+}
+
+.owner-stat-icon {
+  display: inline-grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 13px;
+  background: #f0f4e9;
+  font-size: 19px;
+}
+
+.owner-stat-card p {
+  margin: 18px 0 7px;
+  color: #697064;
+  font-size: 13px;
+}
+
+.owner-stat-card strong {
+  display: block;
+  font-size: 30px;
+  letter-spacing: -0.04em;
+}
+
+.owner-stat-card small {
+  display: block;
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.owner-panel {
+  padding: 24px;
+  margin-bottom: 22px;
+}
+
+.owner-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.owner-section-heading h2,
+.owner-business-panel h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.owner-section-heading p,
+.owner-business-panel > div > p {
+  margin: 7px 0 0;
+  font-size: 13px;
+}
+
+.owner-text-link {
+  color: #476b34;
+  font-size: 13px;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.owner-text-link:hover {
+  text-decoration: underline;
+}
+
+.owner-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.owner-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.owner-table th {
+  padding: 13px 12px;
+  background: #f8f9f5;
+  color: #73796e;
+  font-size: 11px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.owner-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #eff0e9;
+  font-size: 13px;
+}
+
+.owner-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.owner-food-name {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 150px;
+  font-weight: 650;
+}
+
+.owner-food-thumb {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #f2f2ec;
+}
+
+.owner-pill {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.owner-pill-active {
+  background: #eaf5e7;
+  color: #39713a;
+}
+
+.owner-pill-inactive {
+  background: #f7eae7;
+  color: #9b4b3c;
+}
+
+.owner-empty,
+.owner-loading {
+  padding: 38px 20px;
+  text-align: center;
+}
+
+.owner-empty > span {
+  font-size: 32px;
+}
+
+.owner-empty h3 {
+  margin: 12px 0 6px;
+}
+
+.owner-empty p {
+  max-width: 440px;
+  margin: 0 auto;
+  color: #777d72;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.owner-alert {
+  margin-bottom: 20px;
+  padding: 13px 16px;
+  border: 1px solid #efd7a6;
+  border-radius: 12px;
+  background: #fff9e9;
+  color: #755b1c;
+  font-size: 13px;
+}
+
+.owner-business-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin: 24px 0 0;
+}
+
+.owner-business-details dt {
+  color: #777d72;
+  font-size: 12px;
+}
+
+.owner-business-details dd {
+  margin: 7px 0 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+@media (max-width: 1000px) {
+  .owner-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .owner-page {
+    padding: 20px 14px;
+  }
+
+  .owner-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .owner-stat-card {
+    padding: 16px;
+  }
+
+  .owner-stat-card strong {
+    font-size: 25px;
+  }
+
+  .owner-panel {
+    padding: 17px 13px;
+  }
+
+  .owner-business-details {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .owner-section-heading {
+    align-items: flex-start;
+  }
+}

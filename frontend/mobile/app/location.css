@@ -1,0 +1,365 @@
+.location-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+}
+
+.location-page__content {
+  flex: 1;
+  padding: var(--space-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* ── GPS Button ── */
+.location-page__gps-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  padding: var(--space-base);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: background-color var(--transition-fast);
+}
+
+.location-page__gps-btn:active {
+  background-color: var(--color-green-bg-light);
+}
+
+.location-page__gps-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.location-page__gps-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-page__gps-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.location-page__gps-sub {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+}
+
+/* ── Divider ── */
+.location-page__divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+}
+
+.location-page__divider::before,
+.location-page__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+.location-page__divider span {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-light);
+  white-space: nowrap;
+}
+
+/* ── Location List ── */
+.location-page__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.location-page__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  width: 100%;
+  padding: var(--space-md) var(--space-base);
+  background-color: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.location-page__item--active {
+  border-color: var(--color-primary);
+  background-color: var(--color-green-bg-light);
+}
+
+.location-page__item-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color var(--transition-fast);
+}
+
+.location-page__item--active .location-page__item-radio {
+  border-color: var(--color-primary);
+}
+
+.location-page__item-radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.location-page__item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.location-page__item-name {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.location-page__item-fee {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-medium);
+}
+
+.location-page__item-badge {
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-green-bg);
+  color: var(--color-primary-medium);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* ── Manual Entry Button ── */
+.location-page__manual-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: var(--space-md);
+  background: none;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-medium);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.location-page__manual-btn:active {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+}
+
+/* ── Confirm Section ── */
+.location-page__confirm {
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.location-page__selected {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.location-page__selected-label {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-medium);
+}
+
+.location-page__selected-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.location-page__selected-icon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.location-page__selected-name {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  flex: 1;
+}
+
+.location-page__change-btn {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.location-page__selected-fee-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-medium);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.location-page__selected-fee {
+  font-weight: 600;
+  color: var(--color-primary-medium);
+}
+
+/* ── Manual Entry Form ── */
+.location-page__manual {
+  flex: 1;
+  padding: var(--space-xl) var(--space-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.location-page__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.location-page__label {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.location-page__input {
+  height: 48px;
+  padding: 0 var(--space-base);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg);
+  transition: border-color var(--transition-fast);
+}
+
+.location-page__input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.location-page__input::placeholder {
+  color: var(--color-text-light);
+}
+
+.location-page__textarea {
+  padding: var(--space-md) var(--space-base);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg);
+  resize: vertical;
+  min-height: 80px;
+  transition: border-color var(--transition-fast);
+}
+
+.location-page__textarea:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.location-page__textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+/* ── GPS Modal ── */
+.location-page__modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: var(--space-xl);
+}
+
+.location-page__modal {
+  background-color: var(--color-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+}
+
+.location-page__modal-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-green-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+}
+
+.location-page__modal-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.location-page__modal-text {
+  font-size: var(--font-size-base);
+  color: var(--color-text-medium);
+  line-height: 1.5;
+}
+
+.location-page__modal-later {
+  font-size: var(--font-size-base);
+  color: var(--color-text-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  font-weight: 500;
+}
+
+.location-page__modal-later:active {
+  color: var(--color-text-dark);
+}
