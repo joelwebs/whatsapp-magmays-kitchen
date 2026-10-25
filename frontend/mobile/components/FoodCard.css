@@ -1,0 +1,114 @@
+/* ── Food Card Base ── */
+.food-card {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: inherit;
+}
+
+/* ── Horizontal Layout (Menu list) ── */
+.food-card--horizontal {
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+}
+
+.food-card--horizontal .food-card__img-wrap {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  background-color: var(--color-surface);
+}
+
+.food-card--horizontal .food-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.food-card--horizontal .food-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.food-card--horizontal .food-card__name {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  margin-bottom: 2px;
+}
+
+.food-card--horizontal .food-card__desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-medium);
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.food-card--horizontal .food-card__price {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-primary-medium);
+}
+
+/* ── Featured Layout (Home grid) ── */
+.food-card--featured {
+  flex-direction: column;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.food-card__img-wrap--featured {
+  width: 140px;
+  height: 100px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-surface);
+}
+
+.food-card--featured .food-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.food-card__info--featured {
+  padding-top: var(--space-sm);
+  width: 100%;
+}
+
+.food-card__info--featured .food-card__name {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.food-card__info--featured .food-card__price {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-primary-medium);
+  margin-top: 2px;
+}
+
+/* ── Image Placeholder ── */
+.food-card__img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  font-size: 28px;
+}

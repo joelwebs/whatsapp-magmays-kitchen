@@ -1,0 +1,130 @@
+.owner-login {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+}
+
+.owner-login__content {
+  flex: 1;
+  padding: var(--space-lg) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Brand ── */
+.owner-login__brand {
+  margin-bottom: var(--space-2xl);
+}
+
+.owner-login__logo-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.owner-login__logo-name {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
+}
+
+.owner-login__logo-sub {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* ── Header ── */
+.owner-login__header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.owner-login__title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.owner-login__subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-medium);
+  margin-top: var(--space-xs);
+}
+
+/* ── Form ── */
+.owner-login__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.owner-login__field {
+  width: 100%;
+}
+
+.owner-login__input {
+  width: 100%;
+  height: 50px;
+  padding: 0 var(--space-base);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg);
+  transition: border-color var(--transition-fast);
+}
+
+.owner-login__input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+.owner-login__input::placeholder {
+  color: var(--color-text-light);
+}
+
+.owner-login__password-wrap {
+  position: relative;
+}
+
+.owner-login__password-wrap .owner-login__input {
+  padding-right: 48px;
+}
+
+.owner-login__eye-btn {
+  position: absolute;
+  right: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.owner-login__forgot {
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-medium);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-sm);
+  font-weight: 500;
+}
+
+.owner-login__forgot:active {
+  color: var(--color-primary);
+}

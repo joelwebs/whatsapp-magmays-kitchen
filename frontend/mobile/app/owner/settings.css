@@ -1,0 +1,165 @@
+
+.settings-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px;
+  color: #25291f;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+.settings-header {
+  margin-bottom: 25px;
+}
+
+.settings-eyebrow {
+  margin: 0 0 8px;
+  color: #78816e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.settings-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 35px);
+  letter-spacing: -0.04em;
+}
+
+.settings-header > p:last-child {
+  color: #777d72;
+  font-size: 14px;
+}
+
+.settings-card {
+  margin-bottom: 22px;
+  padding: 25px;
+  border: 1px solid #e9e9e1;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgb(35 45 24 / 3%);
+}
+
+.settings-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.settings-card-heading h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.settings-card-heading p {
+  margin: 7px 0 0;
+  color: #777d72;
+  font-size: 13px;
+}
+
+.settings-readonly,
+.settings-location-count {
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #f0f1e9;
+  color: #626a58;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.settings-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin: 0;
+}
+
+.settings-details > div {
+  min-width: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #eff0e9;
+}
+
+.settings-details dt {
+  margin-bottom: 8px;
+  color: #777d72;
+  font-size: 12px;
+}
+
+.settings-details dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.settings-location-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.settings-location-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eff0e9;
+}
+
+.settings-location-list li:last-child {
+  border-bottom: 0;
+}
+
+.settings-location-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 11px;
+  background: #f0f4e9;
+  color: #476b34;
+}
+
+.settings-location-list strong {
+  font-size: 14px;
+}
+
+.settings-location-list p,
+.settings-empty {
+  color: #777d72;
+  font-size: 13px;
+}
+
+.settings-location-list p {
+  margin: 6px 0 0;
+}
+
+.settings-error {
+  margin-bottom: 18px;
+  padding: 13px 16px;
+  border-radius: 12px;
+  background: #fff1ed;
+  color: #923f30;
+  font-size: 13px;
+}
+
+@media (max-width: 600px) {
+  .settings-page {
+    padding: 20px 14px;
+  }
+
+  .settings-card {
+    padding: 19px 16px;
+  }
+
+  .settings-details {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
