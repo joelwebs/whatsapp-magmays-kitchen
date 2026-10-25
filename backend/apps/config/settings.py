@@ -4,7 +4,7 @@ Django settings for config project.
 """
 
 from pathlib import Path
-
+from datetime import timedelta
 import environ
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -94,14 +94,40 @@ USE_TZ = True
 # Static files
 STATIC_URL = "static/"
 
-# Django REST Framework
+
+
 REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ],
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
     ],
+}
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "AUTH_HEADER_TYPES": ("Bearer",),
 }
 
 # CORS: configure explicitly for the mobile app's actual development setup.
 CORS_ALLOWED_ORIGINS = env.list("CORS_ALLOWED_ORIGINS", default=[])
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# ImageKit
+IMAGEKIT_PUBLIC_KEY = env(
+    "IMAGEKIT_PUBLIC_KEY",
+    default="",
+)
+IMAGEKIT_PRIVATE_KEY = env(
+    "IMAGEKIT_PRIVATE_KEY",
+    default="",
+)
+IMAGEKIT_URL_ENDPOINT = env(
+    "IMAGEKIT_URL_ENDPOINT",
+    default="",
+)
