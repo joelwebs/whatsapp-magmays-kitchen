@@ -26,8 +26,6 @@ export default function LocationPage({ onNavigate }) {
     deliveryLocation,
   } = useCart()
 
-  // Derive the selected location rather than synchronizing duplicate state
-  // through an effect.
   const selectedId = manualSelectedId ?? deliveryLocation?.id ?? null
 
   const loadLocations = useCallback(async () => {

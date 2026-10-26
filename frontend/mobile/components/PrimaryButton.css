@@ -4,11 +4,12 @@
   justify-content: center;
   gap: var(--space-sm);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   font-weight: 600;
   cursor: pointer;
-  transition: background-color var(--transition-fast), opacity var(--transition-fast);
+  transition: all var(--transition-fast);
   letter-spacing: 0.2px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .primary-btn--full {
@@ -30,20 +31,23 @@
 }
 
 .primary-btn--lg {
-  height: 52px;
+  height: 54px;
   padding: 0 var(--space-2xl);
   font-size: var(--font-size-md);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
 }
 
 /* Variants */
 .primary-btn--primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-medium) 100%);
   color: var(--color-white);
+  box-shadow: 0 2px 8px rgba(27, 67, 50, 0.2);
 }
 
 .primary-btn--primary:active {
-  background-color: var(--color-primary-dark);
+  background: var(--color-primary-dark);
+  box-shadow: 0 1px 4px rgba(27, 67, 50, 0.3);
+  transform: scale(0.98);
 }
 
 .primary-btn--secondary {
@@ -70,6 +74,7 @@
 .primary-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
 .primary-btn__icon {

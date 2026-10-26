@@ -110,7 +110,7 @@ export default function FoodDetailPage({ food, onBack }) {
             size="lg"
             id="food-detail-add-btn"
           >
-            Add to Menu
+            Add to Orders
           </PrimaryButton>
         </div>
       </motion.div>

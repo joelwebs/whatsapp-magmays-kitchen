@@ -50,37 +50,66 @@ export default function HomePage({ onNavigate }) {
 
       {/* Hero Section */}
       <section className="home__hero" id="home-hero">
-        <div className="home__hero-content">
-          <motion.h2
-            className="home__hero-title"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+        <div className="home__hero-bg" />
+        <div className="home__hero-inner">
+          <div className="home__hero-content">
+            <motion.div
+              className="home__hero-badge"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+            >
+              🔥 Fresh Today
+            </motion.div>
+            <motion.h2
+              className="home__hero-title"
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+            >
+              Delicious Meals{'\n'}Made Fresh Daily
+            </motion.h2>
+            <motion.p
+              className="home__hero-sub"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.3 }}
+            >
+              Good food. Great taste. Always.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <PrimaryButton
+                onClick={() => onNavigate('menu')}
+                size="md"
+                fullWidth={false}
+                id="home-order-now-btn"
+              >
+                Order Now
+              </PrimaryButton>
+            </motion.div>
+          </div>
+          <motion.div
+            className="home__hero-img"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Delicious Meals{'\n'}Made Fresh Daily
-          </motion.h2>
-          <p className="home__hero-sub">Good food. Great taste. Always.</p>
-          <PrimaryButton
-            onClick={() => onNavigate('menu')}
-            size="md"
-            fullWidth={false}
-            id="home-order-now-btn"
-          >
-            Order Now
-          </PrimaryButton>
-        </div>
-        <div className="home__hero-img">
-          {featuredFoods[0]?.image_url && (
-            <img
-              src={
-                featuredFoods[0].image_url.startsWith('http')
-                  ? featuredFoods[0].image_url
-                  : `${baseUrl}${featuredFoods[0].image_url}`
-              }
-              alt={featuredFoods[0].name}
-              className="home__hero-food-img"
-            />
-          )}
+            {featuredFoods[0]?.image_url && (
+              <img
+                src={
+                  featuredFoods[0].image_url.startsWith('http')
+                    ? featuredFoods[0].image_url
+                    : `${baseUrl}${featuredFoods[0].image_url}`
+                }
+                alt={featuredFoods[0].name}
+                className="home__hero-food-img"
+              />
+            )}
+          </motion.div>
         </div>
       </section>
 
@@ -101,7 +130,6 @@ export default function HomePage({ onNavigate }) {
                 id={`home-category-${cat.id}`}
               >
                 <div className="home__category-circle">
-                  {/* Show first food image from this category */}
                   {(() => {
                     const catFood = foods.find((f) => f.category === cat.id)
                     const imgUrl = catFood?.image_url
@@ -138,7 +166,7 @@ export default function HomePage({ onNavigate }) {
               onClick={() => onNavigate('menu')}
               id="home-view-all-btn"
             >
-              View All
+              View All →
             </button>
           </div>
           <div className="home__featured-scroll">

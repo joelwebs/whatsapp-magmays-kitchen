@@ -57,15 +57,22 @@ export default function AboutPage({ onNavigate }) {
         </motion.div>
 
         {/* Contact */}
-        <div className="about__section">
+        <motion.div
+          className="about__section"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
           <h3 className="about__section-title">Contact</h3>
           <div className="about__info-list">
             {business?.phone_number && (
               <a
                 href={`tel:${business.phone_number}`}
-                className="about__info-item"
+                className="about__info-item about__info-item--clickable"
               >
-                <Phone size={18} className="about__info-icon" />
+                <div className="about__info-icon-wrap">
+                  <Phone size={16} />
+                </div>
                 <span>{business.phone_number}</span>
               </a>
             )}
@@ -74,21 +81,30 @@ export default function AboutPage({ onNavigate }) {
                 href={`https://wa.me/${business.whatsapp_number.replace(/\D/g, '')}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="about__info-item"
+                className="about__info-item about__info-item--clickable about__info-item--whatsapp"
               >
-                <FaWhatsapp size={18} className="about__info-icon" />
-                <span>WhatsApp</span>
+                <div className="about__info-icon-wrap about__info-icon-wrap--whatsapp">
+                  <FaWhatsapp size={16} />
+                </div>
+                <span>WhatsApp Us</span>
               </a>
             )}
           </div>
-        </div>
+        </motion.div>
 
         {/* Mobile Money */}
-        <div className="about__section">
+        <motion.div
+          className="about__section"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           <h3 className="about__section-title">Mobile Money (MoMo)</h3>
           <div className="about__info-list">
             <div className="about__info-item">
-              <CreditCard size={18} className="about__info-icon" />
+              <div className="about__info-icon-wrap">
+                <CreditCard size={16} />
+              </div>
               <div className="about__info-column">
                 <span className="about__info-label">Name</span>
                 <span className="about__info-value">
@@ -98,7 +114,9 @@ export default function AboutPage({ onNavigate }) {
             </div>
             {business?.phone_number && (
               <div className="about__info-item">
-                <Phone size={18} className="about__info-icon" />
+                <div className="about__info-icon-wrap">
+                  <Phone size={16} />
+                </div>
                 <div className="about__info-column">
                   <span className="about__info-label">Number</span>
                   <span className="about__info-value">
@@ -108,18 +126,25 @@ export default function AboutPage({ onNavigate }) {
               </div>
             )}
           </div>
-        </div>
+        </motion.div>
 
         {/* Opening Hours */}
-        <div className="about__section">
+        <motion.div
+          className="about__section"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+        >
           <h3 className="about__section-title">Opening Hours</h3>
           <div className="about__info-list">
             <div className="about__info-item">
-              <Clock size={18} className="about__info-icon" />
-              <span>Mon – Sun: 8:00 AM – 10:00 PM</span>
+              <div className="about__info-icon-wrap">
+                <Clock size={16} />
+              </div>
+              <span>Mon - Sun: 8:00 AM - 10:00 PM</span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Footer */}
         <div className="about__footer">

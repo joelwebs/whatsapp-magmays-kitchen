@@ -110,7 +110,7 @@ export default function MenuPage({ onNavigate, initialCategoryId }) {
       {/* Food List */}
       <div className="menu-page__list" id="menu-food-list">
         {filteredFoods.length === 0 ? (
-          <EmptyState message="No meals found" icon="🔍" />
+          <EmptyState message="No meals found" icon="⌕" />
         ) : (
           filteredFoods.map((food, i) => (
             <motion.div

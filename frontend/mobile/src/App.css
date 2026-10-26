@@ -14,13 +14,16 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  height: 60px;
-  background-color: var(--color-bg);
-  border-top: 1px solid var(--color-border);
+  height: 64px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--color-border-light);
   padding-bottom: env(safe-area-inset-bottom, 0);
   position: sticky;
   bottom: 0;
   z-index: 100;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
 }
 
 .bottom-nav__item {
@@ -28,16 +31,18 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2px;
+  gap: 3px;
   flex: 1;
   height: 100%;
-  font-size: 10px;
+  font-size: var(--font-size-2xs);
   font-weight: 500;
   color: var(--color-text-light);
   background: none;
   border: none;
   cursor: pointer;
   transition: color var(--transition-fast);
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .bottom-nav__item--active {
@@ -45,9 +50,59 @@
 }
 
 .bottom-nav__item:active {
-  color: var(--color-primary);
+  transform: scale(0.92);
+}
+
+.bottom-nav__icon-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.bottom-nav__badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  min-width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: var(--color-warm);
+  color: var(--color-white);
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+  border: 2px solid var(--color-white);
+}
+
+.bottom-nav__active-dot {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+}
+
+.bottom-nav__label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
 }
 
 .bottom-nav__item svg {
   flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.bottom-nav__item--active svg {
+  transform: scale(1.05);
 }

@@ -1,6 +1,3 @@
-// import { ChevronLeft, ShoppingCart, Search } from 'lucide-react'
-// import { useCart } from '../context/CartContext'
-// import './Header.css'
 import { ChevronLeft, ShoppingCart, Search } from 'lucide-react'
 import { useCart } from '../context/useCart'
 import './Header.css'
@@ -25,12 +22,12 @@ export default function Header({
       <div className="header__left">
         {showBack && (
           <button
-            className="header__btn"
+            className="header__btn header__back-btn"
             onClick={onBack}
             aria-label="Go back"
             id="header-back-btn"
           >
-            <ChevronLeft size={24} />
+            <ChevronLeft size={22} />
           </button>
         )}
       </div>
@@ -38,8 +35,10 @@ export default function Header({
       <div className="header__center">
         {showLogo ? (
           <div className="header__logo">
-            <span className="header__logo-text">Magmay's</span>
-            <span className="header__logo-sub">KITCHEN</span>
+            <div className="header__logo-text-wrap">
+              <span className="header__logo-text">Magmay's</span>
+              <span className="header__logo-sub">KITCHEN</span>
+            </div>
           </div>
         ) : (
           title && <h1 className="header__title">{title}</h1>

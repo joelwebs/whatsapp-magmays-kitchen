@@ -104,7 +104,7 @@ export default function CheckoutPage({ onNavigate }) {
           showBack
           onBack={() => onNavigate('home')}
         />
-        <EmptyState message="Your cart is empty" icon="🛒" />
+        <EmptyState message="Your cart is empty" icon="🛒︎" />
         <div className="checkout__empty-action">
           <PrimaryButton
             onClick={() => onNavigate('menu')}
