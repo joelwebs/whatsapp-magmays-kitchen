@@ -4,14 +4,20 @@
   justify-content: space-between;
   padding: var(--space-md) var(--space-base);
   min-height: 56px;
-  background-color: var(--color-bg);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
 }
 
 .header--transparent {
   background-color: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -27,7 +33,7 @@
 .header__right {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   min-width: 40px;
 }
 
@@ -44,26 +50,33 @@
 
 .header__title {
   font-size: var(--font-size-lg);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text-dark);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  letter-spacing: -0.3px;
 }
 
 .header__btn {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-full);
   color: var(--color-text-dark);
-  transition: background-color var(--transition-fast);
+  transition: all var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header__back-btn {
+  background-color: var(--color-surface);
 }
 
 .header__btn:active {
   background-color: var(--color-border);
+  transform: scale(0.92);
 }
 
 .header__cart-btn {
@@ -72,40 +85,54 @@
 
 .header__cart-badge {
   position: absolute;
-  top: 0;
-  right: 0;
-  min-width: 18px;
-  height: 18px;
+  top: 2px;
+  right: 2px;
+  min-width: 16px;
+  height: 16px;
   border-radius: var(--radius-full);
-  background-color: var(--color-primary);
+  background: var(--color-warm);
   color: var(--color-white);
-  font-size: var(--font-size-xs);
+  font-size: 9px;
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 4px;
+  padding: 0 3px;
+  line-height: 1;
+  border: 2px solid var(--color-white);
+}
+
+/* ── Logo ── */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.header__logo-icon {
+  font-size: 24px;
   line-height: 1;
 }
 
-.header__logo {
+.header__logo-text-wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 10px;
   line-height: 1;
 }
 
 .header__logo-text {
   font-size: var(--font-size-lg);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-primary);
   letter-spacing: -0.5px;
 }
 
 .header__logo-sub {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--color-primary);
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--color-accent);
   letter-spacing: 3px;
   text-transform: uppercase;
 }

@@ -16,7 +16,7 @@ export default function LoadingState({ message = 'Loading...' }) {
 export function ErrorState({ message = 'Something went wrong', onRetry }) {
   return (
     <div className="loading-state loading-state--error" id="error-state">
-      <p className="loading-state__icon">😕</p>
+      <p className="loading-state__icon">☹︎</p>
       <p className="loading-state__text">{message}</p>
       {onRetry && (
         <button className="loading-state__retry" onClick={onRetry}>
@@ -27,7 +27,7 @@ export function ErrorState({ message = 'Something went wrong', onRetry }) {
   )
 }
 
-export function EmptyState({ message = 'Nothing here yet', icon = '🍽️' }) {
+export function EmptyState({ message = 'Nothing here yet', icon = '' }) {
   return (
     <div className="loading-state loading-state--empty" id="empty-state">
       <p className="loading-state__icon">{icon}</p>

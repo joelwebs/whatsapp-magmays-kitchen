@@ -9,6 +9,7 @@
   cursor: pointer;
   padding: 0;
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* ── Horizontal Layout (Menu list) ── */
@@ -18,18 +19,24 @@
 }
 
 .food-card--horizontal .food-card__img-wrap {
-  width: 72px;
-  height: 72px;
-  border-radius: var(--radius-md);
+  width: 76px;
+  height: 76px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   flex-shrink: 0;
   background-color: var(--color-surface);
+  box-shadow: var(--shadow-xs);
 }
 
 .food-card--horizontal .food-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.food-card--horizontal:active .food-card__img {
+  transform: scale(1.05);
 }
 
 .food-card--horizontal .food-card__info {
@@ -42,6 +49,7 @@
   font-weight: 600;
   color: var(--color-text-dark);
   margin-bottom: 2px;
+  letter-spacing: -0.1px;
 }
 
 .food-card--horizontal .food-card__desc {
@@ -51,34 +59,95 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.food-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .food-card--horizontal .food-card__price {
   font-size: var(--font-size-base);
   font-weight: 700;
-  color: var(--color-primary-medium);
+  color: var(--color-primary);
+}
+
+/* Add button in horizontal layout */
+.food-card__add-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.food-card__add-btn:active {
+  background-color: var(--color-primary-dark);
+  transform: scale(0.9);
 }
 
 /* ── Featured Layout (Home grid) ── */
 .food-card--featured {
   flex-direction: column;
-  width: 140px;
+  width: 148px;
   flex-shrink: 0;
 }
 
 .food-card__img-wrap--featured {
-  width: 140px;
-  height: 100px;
-  border-radius: var(--radius-md);
+  width: 148px;
+  height: 108px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background-color: var(--color-surface);
+  position: relative;
+  box-shadow: var(--shadow-card);
 }
 
 .food-card--featured .food-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform var(--transition-base);
+}
+
+.food-card--featured:active .food-card__img {
+  transform: scale(1.05);
+}
+
+/* Quick add button overlay */
+.food-card__quick-add {
+  position: absolute;
+  bottom: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.food-card__quick-add:active {
+  background-color: var(--color-primary-dark);
+  transform: scale(0.88);
 }
 
 .food-card__info--featured {
@@ -98,7 +167,7 @@
 .food-card__info--featured .food-card__price {
   font-size: var(--font-size-sm);
   font-weight: 700;
-  color: var(--color-primary-medium);
+  color: var(--color-primary);
   margin-top: 2px;
 }
 
